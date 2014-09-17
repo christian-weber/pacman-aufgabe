@@ -57,13 +57,6 @@ public class Level {
         this.enemies = enemies;
     }
 
-    /**
-     * Returns the Element
-     *
-     * @param x the x coordinate
-     * @param y the y coordinate
-     * @return BackgroundElement
-     */
     public BackgroundElement getBg(int x, int y) {
         return backgroundElements[x][y];
     }
@@ -71,10 +64,8 @@ public class Level {
     public void addBg(BackgroundElement bg) {
         backgroundElements[bg.getX()][bg.getY()] = bg;
 
-        // check if the element we load is a Dot or Superdot
         if (bg.getType().equals(BackgroundType.DOT)
                 || bg.getType().equals(BackgroundType.SUPERDOT)) {
-            // if so we can earn points
             this.points++;
         }
     }

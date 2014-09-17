@@ -2,9 +2,6 @@ package com.infonova.education.pacman.strategy;
 
 import com.infonova.education.pacman.*;
 
-/**
- * Created by christian.weber on 16.09.2014.
- */
 public class EnemyMovable implements Movable {
 
     @Override
@@ -28,13 +25,8 @@ public class EnemyMovable implements Movable {
             newY = movePosition(++newY, maxY);
         }
 
-        BackgroundElement backgroundElement = level.getBg(newX, newY);
-        BackgroundType backgroundType = backgroundElement.getType();
-
-        if (BackgroundType.WALL.compareTo(backgroundType) != 0) {
-            gameObject.setX(newX);
-            gameObject.setY(newY);
-        }
+        gameObject.setX(newX);
+        gameObject.setY(newY);
 
     }
 

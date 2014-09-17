@@ -1,15 +1,11 @@
 package com.infonova.education.pacman.strategy;
 
-import com.infonova.education.pacman.*;
+import com.infonova.education.pacman.GameObject;
+import com.infonova.education.pacman.Level;
+import com.infonova.education.pacman.UserAction;
 
-/**
- * Default Movable strategy implementation.
- */
 public class HeroMovable implements Movable {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void move(UserAction userAction, Level level, GameObject gameObject) {
 
@@ -34,14 +30,8 @@ public class HeroMovable implements Movable {
                 break;
         }
 
-        BackgroundElement backgroundElement = level.getBg(newX, newY);
-        BackgroundType backgroundType = backgroundElement.getType();
-
-        // TODO: REMOVE
-        if (BackgroundType.WALL.compareTo(backgroundType) != 0) {
-            gameObject.setX(newX);
-            gameObject.setY(newY);
-        }
+        gameObject.setX(newX);
+        gameObject.setY(newY);
 
     }
 

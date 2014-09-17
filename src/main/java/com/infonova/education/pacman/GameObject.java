@@ -2,9 +2,6 @@ package com.infonova.education.pacman;
 
 import java.util.Observable;
 
-/**
- * Base class for all game objects.
- */
 public abstract class GameObject extends Observable {
 
 	private int x;

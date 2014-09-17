@@ -1,8 +1,5 @@
 package com.infonova.education.pacman;
 
-/**
- * Created by christian.weber on 15.09.2014.
- */
 public abstract class MovableGameObject extends GameObject {
 
     public MovableGameObject(int x, int y) {

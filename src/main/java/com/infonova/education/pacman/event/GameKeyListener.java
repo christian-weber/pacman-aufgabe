@@ -7,9 +7,6 @@ import com.infonova.education.pacman.UserAction;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-/**
- * Key event implementation used to handle user actions.
- */
 public class GameKeyListener extends KeyAdapter {
 
     private final Hero hero;
@@ -20,9 +17,6 @@ public class GameKeyListener extends KeyAdapter {
         this.level = level;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void keyPressed(KeyEvent keyEvent) {
 
