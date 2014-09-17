@@ -1,6 +1,7 @@
 package com.infonova.education.pacman.observer;
 
 import com.infonova.education.pacman.*;
+import com.infonova.education.pacman.strategy.EnemySupermodeMovable;
 import com.infonova.education.pacman.thread.SuperModeThread;
 
 import java.util.Observable;
@@ -45,6 +46,10 @@ public class PointObserver implements Observer {
             hero.setPoints(hero.getPoints() + 1);
             level.increaseScore(2);
             hero.startSupermode();
+
+            for (Enemy enemy : level.getEnemies()) {
+                enemy.setMovable(new EnemySupermodeMovable());
+            }
 
             new SuperModeThread(hero).start();
 

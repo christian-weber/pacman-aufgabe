@@ -37,10 +37,11 @@ public class Enemy extends MovableGameObject {
     }
 
     public void move(Level level) {
-
         movable.move(null, level, this);
-
     }
 
+    public void setMovable(Movable movable) {
+        this.movable = movable;
+    }
 
 }

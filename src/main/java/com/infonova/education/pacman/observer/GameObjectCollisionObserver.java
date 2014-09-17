@@ -5,6 +5,7 @@ import com.infonova.education.pacman.GamePanel;
 import com.infonova.education.pacman.Hero;
 import com.infonova.education.pacman.Level;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
@@ -12,15 +13,22 @@ import java.util.Observer;
 public class GameObjectCollisionObserver implements Observer {
 
     private final Level level;
-    private final GamePanel gamePanel;
+    private final WeakReference<GamePanel> reference;
 
     public GameObjectCollisionObserver(Level level, GamePanel gamePanel) {
         this.level = level;
-        this.gamePanel = gamePanel;
+        this.reference = new WeakReference<GamePanel>(gamePanel);
     }
 
     @Override
     public void update(Observable o, Object arg) {
+
+        GamePanel gamePanel = reference.get();
+
+        if (gamePanel == null) {
+            return;
+        }
+
         List<Enemy> enemies = level.getEnemies();
         Hero hero = level.getHero();
 

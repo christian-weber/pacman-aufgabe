@@ -19,13 +19,13 @@ public class EnemyMovable implements Movable {
         int newY = gameObject.getY();
 
         if (h.getX() < newX) {
-            movePosition(--newX, maxX);
+            newX = movePosition(--newX, maxX);
         } else if (h.getX() > newX) {
-            movePosition(++newX, maxX);
+            newX = movePosition(++newX, maxX);
         } else if (h.getY() < newY) {
-            movePosition(--newY, maxY);
+            newY = movePosition(--newY, maxY);
         } else if (h.getY() > newY) {
-            movePosition(++newY, maxY);
+            newY = movePosition(++newY, maxY);
         }
 
         BackgroundElement backgroundElement = level.getBg(newX, newY);
